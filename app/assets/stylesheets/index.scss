@@ -1,0 +1,46 @@
+
+
+.posts-container {
+    width: 70%;
+    margin: 10px 2%;
+  }
+
+.oolong{
+  background-color: antiquewhite;
+  width: 30%;
+  height: 100%;
+  min-height: 100%;
+}
+
+  h3 {
+    font-size: 100%;
+    width: 100%;
+    margin: 30px auto;
+    text-align: center;
+  }
+  .post {
+    border-top: solid #83119c;
+    margin-top: 10px;
+    padding-top: 20px;
+  }
+  .main-box {
+    margin: 5px 0;
+    display: flex;
+    justify-content: space-between;
+  }
+  .dekai {
+    display: flex;
+  }
+
+  .kensaku{
+    text-align:center;
+  }
+
+  input[type="text"]{
+    width: 95%;
+  }
+
+  .dekai > .oolong {
+    height: auto;
+  }
+    

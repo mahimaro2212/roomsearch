@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Roomsearch</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+  </head>
+
+  <body>
+    <header>
+      <ul>
+        <li><% if user_signed_in? %>
+          <%= link_to "ホーム", posts_path %>
+          <%= link_to "新規投稿",new_post_path %>
+          <%= link_to "マイページへ", user_path(current_user.id) %>
+          <%= button_to 'ログアウト', destroy_user_session_path, method: :delete %>
+        <% end %>
+        </li>
+      </ul>
+    </header>
+    <main>
+    <%= yield %>
+    </main>
+    <footer>
+      <p>Copyright © MK All Rights Reserved.</p>
+    </footer>
+  </body>
+</html>

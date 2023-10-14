@@ -1,0 +1,29 @@
+.top {
+    text-align: center;
+    height: 90vh;
+    background-image: image-url('top.jpg');
+    background-position: center center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    display: table;
+    width: 100%;
+}
+
+.outer{
+    margin:10vh auto 0;
+    width: 50vw;
+    height: 75vh;
+    width:fit-content;
+    background-color: #ffffff;
+    opacity: 0.77;
+}
+
+.inner {
+    margin:0 auto;
+    color: #ffffff;
+    font-size: x-large;
+    font-weight: bold;
+    -webkit-text-stroke: 1.5px #7a268d;
+    display: table-cell;
+    vertical-align: middle;  
+}

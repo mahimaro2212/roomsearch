@@ -1,0 +1,41 @@
+<%= stylesheet_link_tag 'index', :media => "all" %>
+
+<div class="dekai">
+  <div class="oolong">
+    <h1>立教大<br> 空教室</h1>
+    <h3>投稿を検索</h3>
+    <div class="kensaku">
+      <%= form_tag({controller:"posts",action:"index"}, method: :get) do %>
+      <%= text_field_tag :search %>
+      <%= submit_tag '検索する'  %>
+    </div>
+    <h5>例：月 1限</h5>
+    <% end %>
+  </div>
+
+  <div class="posts-container">
+  <h3>一覧ページ</h3>
+    <% @posts.each do |t| %>
+      <div class="post">
+        <div class="namebox">
+          <%= t.time %>
+          &emsp;
+          <%= link_to t.user.name, user_path(t.user.id) %>
+        </div>
+        <div class="main-box">
+          <%= t.room %>
+          <%= link_to "詳細へ", post_path(t.id) %>
+          <% if user_signed_in? && current_user.id == t.user_id %>
+          <%= link_to "編集する", edit_post_path(t.id) %>
+          <%= button_to "削除する", post_path(t.id), method: :delete %>
+          <% end %> 
+        </div>
+        <div class="aboutbox">
+          <%= t.about %>
+          <br>
+          <%= t.created_at.to_s(:datetime_jp) %>
+        </div>
+      </div>
+    <% end %>
+  </div>
+</div> 
